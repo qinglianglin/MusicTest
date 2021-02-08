@@ -1,0 +1,75 @@
+* not img not css not Proxy AND  upstream_response_time>=2 | select host, url_extract_path(request_uri)  as "请求uri", count(*) as pv,round(avg(upstream_response_time), 6) as "平均upstream响应时间(s)" group by host, "请求uri" HAVING pv>50 order by "平均upstream响应时间(s)" desc limit 200
+
+
+
+
+* not img not css not Proxy not js not images not images_newui and request_uri not web and request_uri not api2 and not null  and not cf and not dede and not e AND  host:pro.schoolpal.cn | select host, url_extract_path(request_uri)  as "请求uri", count(*) as pv,round(avg(upstream_response_time), 6) as "平均upstream响应时间(s)" group by host, "请求uri"  order by pv desc limit 500
+
+
+
+
+ or request_uri:Attendance
+ or request_uri:Bridge
+ or request_uri:Common
+ or request_uri:ConsultBook
+ or request_uri:Csp
+ or request_uri:DingTalk
+ or request_uri:Employee
+ or request_uri:Exam
+ or request_uri:ExcelInput
+ or request_uri:ExpressAuth
+ or request_uri:Extend
+ or request_uri:Finance
+ or request_uri:FinancialAffair
+ or request_uri:Home
+ or request_uri:HYReport
+ or request_uri:Lesson
+ or request_uri:MarketAnalysis
+ or request_uri:Marketing
+ or request_uri:MarketingSolution
+ or request_uri:OneToOne
+ or request_uri:OutApp
+ or request_uri:Out
+ or request_uri:Performance
+ or request_uri:Proxy
+ or request_uri:Reception
+ or request_uri:Report
+ or request_uri:Robot
+ or request_uri:Salary
+ or request_uri:Schedule
+ or request_uri:SchoolPal
+ or request_uri:SchoolPalShow
+ or request_uri:Settings
+ or request_uri:ShiningStar
+ or request_uri:SiteManager
+ or request_uri:Spring
+ or request_uri:Staff
+ or request_uri:TeachingAffair
+ or request_uri:Teaching
+ or request_uri:Xiaobaoist
+ or api
+
+
+跟踪接口性能
+ * and url: /EduAdmin/B/TeachingLogComment | select url_extract_path(url) url_path, avg(request_time) time, count(1) cnt group by url_path
+
+
+
+
+
+
+* and host:pro.schoolpal.cn and (request_uri:Attendance or request_uri:Bridge or request_uri:Common or request_uri:ConsultBook or request_uri:Csp or request_uri:DingTalk or request_uri:Employee or request_uri:Exam or request_uri:ExcelInput or request_uri:ExpressAuth or request_uri:Extend or request_uri:Finance or request_uri:FinancialAffair or request_uri:Home or request_uri:HYReport or request_uri:Lesson or request_uri:MarketAnalysis or request_uri:Marketing or request_uri:MarketingSolution or request_uri:OneToOne or request_uri:OutApp or request_uri:Out or request_uri:Performance or request_uri:Proxy or request_uri:Reception or request_uri:Report or request_uri:Robot or request_uri:Salary or request_uri:Schedule or request_uri:SchoolPal or request_uri:SchoolPalShow or request_uri:Settings or request_uri:ShiningStar or request_uri:SiteManager or request_uri:Spring or request_uri:Staff or request_uri:TeachingAffair or request_uri:Teaching or request_uri:Xiaobaoist or api) | select host, url_extract_path(request_uri)  as "请求uri", count(*) as pv,round(avg(upstream_response_time), 6) as "平均upstream响应时间(s)" group by host, "请求uri"  order by pv desc limit 500
+
+
+
+
+request_uri:Attendance or request_uri:Bridge or request_uri:Common or request_uri:ConsultBook or request_uri:Csp or request_uri:DingTalk or request_uri:Employee or request_uri:Exam or request_uri:ExcelInput or request_uri:ExpressAuth or request_uri:Extend or request_uri:Finance or request_uri:FinancialAffair or request_uri:Home or request_uri:HYReport or request_uri:Lesson or request_uri:MarketAnalysis or request_uri:Marketing or request_uri:MarketingSolution or request_uri:OneToOne or request_uri:OutApp or request_uri:Out or request_uri:Performance or
+
+
+request_uri:Attendance or request_uri:Bridge or request_uri:Common or request_uri:ConsultBook or request_uri:Csp or request_uri:DingTalk or request_uri:Employee or request_uri:Exam or request_uri:ExcelInput or
+
+
+-- 统计前500
+
+* and host:pro.schoolpal.cn and ( request_uri:Proxy or request_uri:Reception or request_uri:Report or request_uri:Robot or request_uri:Salary or request_uri:Schedule or request_uri:SchoolPal or request_uri:SchoolPalShow or request_uri:Settings or request_uri:ShiningStar or request_uri:SiteManager or request_uri:Spring or request_uri:Staff or request_uri:TeachingAffair or request_uri:Teaching or request_uri:Xiaobaoist or api) and  request_uri not api2 and  request_uri not web and request_uri not GetStuInfoByScheduleId | select host, url_extract_path(request_uri)  as "请求uri", count(*) as pv,round(avg(upstream_response_time), 6) as "平均upstream响应时间(s)" group by host, "请求uri"  order by pv desc limit 500
+
